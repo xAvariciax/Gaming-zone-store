@@ -1,0 +1,80 @@
+
+body {
+  background-image: url("images/Hero.jpg");
+  
+}
+/* bar nav */
+nav {
+  display: flex;            /* activa el modo flexbox */
+  align-items: center;      /* alinea verticalmente */
+  justify-content: space-between; /* separa los elementos horizontalmente */
+  width: 100%;             /* ancho fijo para la barra */
+  margin: 0 auto;           /* centra la barra horizontalmente */
+  background-color: #333;   /* color de fondo ejemplo */
+  padding: 10px 20px;       /* espacio interno */
+  box-sizing: border-box;   /* incluye padding dentro del ancho */
+}
+nav ul {
+  display: flex;            /* los elementos del menú en línea */
+  list-style: none;         /* quita viñetas */
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-right: 20px;       /* espacio entre opciones */
+}
+nav ul li:last-child {
+  margin-right: 0;          /* sin margen al final */
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* bar nav */
+
+/* icon User display */
+
+.icon-user{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.icon-user:hover .options {
+  display: block;
+}
+
+.options a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.options a:hover {
+  background-color: #eee;
+}
+.elemento {
+  display: block flex;
+}
+
+/* icon User display */
+
+title{
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
+}
