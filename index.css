@@ -1,16 +1,37 @@
-
+*{
+  color: white;
+  font-family: sans-serif;
+}
+#title {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
 body {
   background-image: url("images/Hero.jpg");
   
 }
+#nav-button, #nav-button-close {
+  display: none;
+  cursor: pointer;
+}
+#logo {
+  width: 100px;             /* ancho del logo */
+  height: auto;             /* altura automática para mantener la proporción */
+  margin-right: 20px;       /* espacio a la derecha del logo */
+  cursor: pointer;
+}
 /* bar nav */
 nav {
   display: flex;            /* activa el modo flexbox */
+  flex-direction: row;
   align-items: center;      /* alinea verticalmente */
-  justify-content: space-between; /* separa los elementos horizontalmente */
-  width: 100%;             /* ancho fijo para la barra */
+  justify-content: space-between; /* separa los elementos horizontalmente */ 
   margin: 0 auto;           /* centra la barra horizontalmente */
-  background-color: #333;   /* color de fondo ejemplo */
+  background-color:transparent ;  /* color de fondo ejemplo */
   padding: 10px 20px;       /* espacio interno */
   box-sizing: border-box;   /* incluye padding dentro del ancho */
 }
@@ -19,9 +40,10 @@ nav ul {
   list-style: none;         /* quita viñetas */
   margin: 0;
   padding: 0;
+  gap: 1rem;            /* espacio entre los elementos */
 }
 nav ul li {
-  margin-right: 20px;       /* espacio entre opciones */
+  margin-right: 1rem;       /* espacio entre opciones */
 }
 nav ul li:last-child {
   margin-right: 0;          /* sin margen al final */
@@ -33,6 +55,24 @@ nav a {
 }
 /* bar nav */
 
+/* nav list */
+.nav-list {
+  display: flex;            /* los elementos del menú en línea */
+  list-style: none;         /* quita los puntos */
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  align-items: center; 
+  text-align: center;
+  opacity: 0;               /* oculta la lista */
+  visibility: hidden;       /* oculta la lista */
+}
+.nav-list.visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+/* nav list */
 /* icon User display */
 
 .icon-user{
@@ -77,4 +117,29 @@ title{
   font-size: 2em;
   text-align: center;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  #nav-button, #nav-button-close {
+    display:block; /* Muestra el botón en pantallas pequeñas */
+  }
+  #nav-button-close {
+    display: none; /* Oculta el botón de cerrar en pantallas pequeñas */
+  }
+  #nav-button-close.visible {
+    display: block;
+  }
+  .nav-list {
+    display: none; /* Oculta la barra de navegación en pantallas pequeñas */
+    position: absolute;
+    flex-direction: column; /* Cambia a columna */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: end; /* Alinea los elementos al final */
+    background-color: whitesmoke;
+    padding: 1.5rem;
+    gap: 1rem;
+
+  }
 }
